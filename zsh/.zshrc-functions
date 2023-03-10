@@ -1,0 +1,16 @@
+# functions
+prj_search() {
+    search_path=$(find ~/dev/ids-unitelm ~/dev/toriphes ~/Downloads -maxdepth 1 -mindepth 1 -type d | fzf)
+
+    if [[ ! -z "$search_path" ]] then
+        cd $search_path
+    fi
+}
+
+history_search() {
+    history | awk '{$1="";print}' | peco --layout=bottom-up | read foo
+
+    if [[ ! -z $foo ]] then
+    	eval $foo
+    fi
+}
