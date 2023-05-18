@@ -26,10 +26,11 @@ zstyle ':omz:plugins:nvm' autoload yes
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias vim='lvim'
-alias ls="exa -lhg --icons"
+alias vim="lvim"
+alias ls="COLUMNS=80 exa --icons"
 alias l="ls -lah"
 alias lg="lazygit"
+alias tree="ls --tree"
 
 # key bindings
 bindkey -s ^f "prj_search\n"
