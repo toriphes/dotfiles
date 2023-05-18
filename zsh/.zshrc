@@ -26,7 +26,7 @@ zstyle ':omz:plugins:nvm' autoload yes
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias vim='nvim'
+alias vim='lvim'
 alias ls="exa -lhg --icons"
 alias l="ls -lah"
 alias lg="lazygit"
@@ -38,3 +38,11 @@ bindkey -s ^h "history_search\n"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# pnpm
+export PNPM_HOME="/Users/giulioganci/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
