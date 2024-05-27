@@ -1,1 +1,3 @@
 nvim/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/session
+.DS_Store

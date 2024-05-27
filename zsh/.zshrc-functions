@@ -1,10 +1,12 @@
 # functions
 prj_search() {
-    search_path=$(find ~/dev/ids-unitelm ~/dev/toriphes ~/Downloads -maxdepth 1 -mindepth 1 -type d | fzf)
+    local prj_dir
+    prj_dir=$(find ~/dev/ids-unitelm ~/dev/toriphes ~/Downloads -type d -maxdepth 2 -mindepth 1 2> /dev/null | fzf) && cd "$prj_dir"
+}
 
-    if [[ ! -z "$search_path" ]] then
-        cd $search_path
-    fi
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 history_search() {

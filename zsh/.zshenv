@@ -1,5 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Android SDK
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
@@ -10,8 +8,12 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 
-export PATH=/Users/giulioganci/.local/bin:$PATH
+export PATH=~/.local/bin:~/.composer/vendor/bin:$PATH
 
 # default editor
-export VISUAL=lvim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# private env
+[[ ! -f ~/.profile ]] || source ~/.profile
+
